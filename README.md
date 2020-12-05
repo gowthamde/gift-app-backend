@@ -1,2 +1,2 @@
 # gift-app-backend
-Node.js services for gift-app.
+API services for gift-app written in Node.js.
