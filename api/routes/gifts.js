@@ -1,15 +1,16 @@
 const express = require('express');
 const router = express.Router();
 const giftController = require('../controllers/gifts');
+const { verifyToken } = require('../middleware/auth-verify');
 
-router.post('/', giftController.create_gift);
+router.post('/', verifyToken, giftController.create_gift);
 
 router.get('/get-top-gifts', giftController.gettop_gifts)
 
 router.get('/', giftController.getall_gifts)
 
-router.get('/:id', giftController.getbyid_gift)
+router.get('/:id', verifyToken, giftController.getbyid_gift)
 
-router.post('/:id', giftController.update_gifts)
+router.post('/:id', verifyToken, giftController.update_gifts)
 
 module.exports = router;

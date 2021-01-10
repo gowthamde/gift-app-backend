@@ -27,7 +27,9 @@ exports.create_gift = (req, res, next) => {
         quantity: req.body.quantity,
         noOfItemsSold: req.body.noOfItemsSold,
         occasion: req.body.occasion,
-        matchFor: req.body.matchFor
+        matchFor: req.body.matchFor,
+        imageName: req.body.imageName,
+        image: req.body.image
     });
     gift.save().then(result => {
         res.status(200).json({

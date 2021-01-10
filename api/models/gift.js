@@ -24,7 +24,16 @@ const giftSchema = new mongoose.Schema({
     matchFor: {
         type: String,
         required: true
+    },
+    image: {
+        data: Buffer, contentType: String
+    },
+    imageName: {
+        type: String,
+        required: true
     }
+}, {
+    versionKey: false
 });
 
 module.exports = mongoose.model('Gift', giftSchema);
